@@ -216,9 +216,9 @@
     <p>&copy; 2024 Editing Agency. Tous droits réservés.</p>
   </footer>
 
-  <!-- i18n script -->
   <script>
-  const I18N_KEYS_DEFAULTS = {
+document.addEventListener("DOMContentLoaded", () => {
+  const DEFAULTS = {
     col_duration:"Durée", col_simple:"Simple", col_dynamic:"Dynamique *", col_format:"Format",
     short_unit:"Unitaire (<60 s)", short_pack5:"Pack 5", short_pack10:"Pack 10", short_pack15:"Pack 15",
     meta_title:"Editing Agency — agence de montage vidéo",
@@ -226,55 +226,63 @@
   };
 
   async function loadLang(lang){
-    document.documentElement.lang = lang;
-    const res = await fetch(`/locales/${lang}.json`);
-    const dict = await res.json();
+    try{
+      const res = await fetch(`./locales/${lang}.json`, { cache:"no-store" });
+      if(!res.ok) throw new Error(`locales/${lang}.json introuvable`);
+      const dict = await res.json();
 
-    // Textes simples
-    document.querySelectorAll("[data-i18n]").forEach(el=>{
-      const key = el.getAttribute("data-i18n");
-      const val = (key.split('.').reduce((a,k)=>a?.[k], dict)) ?? I18N_KEYS_DEFAULTS[key];
-      if(val!=null) el.textContent = val;
-    });
+      // Remplir textes simples (ne remplace que si la clé existe)
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        const val = key.split('.').reduce((a,k)=>a&&a[k], dict);
+        if(val != null) el.textContent = val;
+        else if (DEFAULTS[key]) el.textContent = DEFAULTS[key]; // fallback colonnes/meta
+      });
 
-    // Listes (ul) à partir d'un tableau
-    document.querySelectorAll("[data-i18n-list]").forEach(ul=>{
-      const key = ul.getAttribute("data-i18n-list");
-      const arr = dict[key];
-      if(Array.isArray(arr)){
-        ul.innerHTML = "";
-        arr.forEach(item=>{
-          const li = document.createElement("li");
-          li.textContent = (typeof item==="string") ? item : String(item);
-          ul.appendChild(li);
-        });
-      }
-    });
+      // Remplir listes (ne vide que si tableau trouvé)
+      document.querySelectorAll("[data-i18n-list]").forEach(ul=>{
+        const key = ul.getAttribute("data-i18n-list");
+        const arr = dict[key];
+        if (Array.isArray(arr)) {
+          ul.innerHTML = "";
+          arr.forEach(item=>{
+            const li = document.createElement("li");
+            li.textContent = String(item);
+            ul.appendChild(li);
+          });
+        }
+      });
 
-    // WhatsApp message
-    const msg = dict.whatsapp_msg || "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :";
-    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
-      a.href = a.href.split("?")[0] + "?text=" + encodeURIComponent(msg);
-    });
+      // Lien WhatsApp avec message localisé
+      const msg = dict.whatsapp_msg ||
+        "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :";
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
+        a.href = a.href.split("?")[0] + "?text=" + encodeURIComponent(msg);
+      });
 
-    // Titre et meta description si fournis
-    const t = dict.meta_title || I18N_KEYS_DEFAULTS.meta_title;
-    const d = dict.meta_desc  || I18N_KEYS_DEFAULTS.meta_desc;
-    document.title = t;
-    const md = document.querySelector('meta[name="description"]');
-    if(md) md.setAttribute("content", d);
+      // Meta + état bouton
+      document.documentElement.lang = lang;
+      document.title = dict.meta_title || DEFAULTS.meta_title;
+      const md = document.querySelector('meta[name="description"]');
+      if(md) md.setAttribute("content", dict.meta_desc || DEFAULTS.meta_desc);
+      document.getElementById("flag").textContent = lang==="fr" ? "🇬🇧" : "🇫🇷";
+      document.getElementById("lang-label").textContent = lang==="fr" ? "EN" : "FR";
 
-    // Bouton flag/label
-    document.getElementById("flag").textContent = lang==="fr" ? "🇬🇧" : "🇫🇷";
-    document.getElementById("lang-label").textContent = lang==="fr" ? "EN" : "FR";
-    localStorage.setItem("lang", lang);
+      localStorage.setItem("lang", lang);
+    }catch(e){
+      console.error("[i18n]", e);
+      alert("Fichier de langue manquant ou invalide.");
+    }
   }
 
-  document.getElementById("lang-toggle").addEventListener("click", ()=>{
+  // Toggle
+  document.getElementById("lang-toggle")?.addEventListener("click", ()=>{
     loadLang(document.documentElement.lang==="fr" ? "en" : "fr");
   });
 
+  // Initial
   loadLang(localStorage.getItem("lang") || "fr");
+});
   </script>
 </body>
 </html>
