@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing Agency - Plaquette</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(to right, #a855f7, #ec4899, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .table-row:hover {
+            background-color: rgba(75, 85, 99, 0.3);
+        }
+        
+        .process-icon {
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .process-icon:nth-child(1) { animation-delay: 0s; }
+        .process-icon:nth-child(2) { animation-delay: 0.5s; }
+        .process-icon:nth-child(3) { animation-delay: 1s; }
+        .process-icon:nth-child(4) { animation-delay: 1.5s; }
+        
+        .arrow {
+            opacity: 0.6;
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen font-sans">
+    
+    <!-- Couverture -->
+    <section class="relative flex flex-col items-center justify-center py-28 text-center overflow-hidden">
+        <div class="animate-fade-in-up">
+            <h1 class="text-7xl font-extrabold gradient-text drop-shadow-2xl animate-float">
+                Editing Agency
+            </h1>
+            <h1 class="mt-8 text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed font-semibold">
+                Créateurs & entreprises : on sublime vos idées
+            </h1>
+            <h2 class="mt-4 text-lg text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                Podcasts, interviews, formats courts ou contenus corporate : tous vos projets transformés en vidéos percutantes.
+            </h2>
+        </div>
+        
+        <!-- Particules décoratives -->
+        <div class="absolute top-20 left-20 w-4 h-4 bg-purple-500 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-6 h-6 bg-pink-500 rounded-full animate-bounce"></div>
+        <div class="absolute top-40 right-40 w-3 h-3 bg-blue-400 rounded-full animate-ping"></div>
+    </section>
+
+    <!-- Intro types de montages -->
+    <section class="px-10 py-16 max-w-5xl mx-auto text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-8" style="text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);">Types de montage</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-left">
+            <div class="bg-gray-900 p-6 rounded-2xl shadow-xl card-hover">
+                <h3 class="text-2xl font-semibold text-purple-400 mb-4 flex items-center">
+                    <span class="mr-2">✂️</span> Montage simple
+                </h3>
+                <ul class="text-gray-300 space-y-2">
+                    <li class="flex items-center"><span class="text-green-400 mr-2">✔️</span> Dérush & nettoyage</li>
+                    <li class="flex items-center"><span class="text-green-400 mr-2">✔️</span> Zooms & cuts de base</li>
+                    <li class="flex items-center"><span class="text-green-400 mr-2">✔️</span> Musique de fond</li>
+                    <li class="flex items-center"><span class="text-green-400 mr-2">✔️</span> Transitions simples</li>
+                    <li class="flex items-center"><span class="text-green-400 mr-2">✔️</span> Sous-titrages basiques (formats courts)</li>
+                </ul>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-2xl shadow-xl card-hover">
+                <h3 class="text-2xl font-semibold text-pink-400 mb-4 flex items-center">
+                    <span class="mr-2">⚡</span> Montage dynamique *
+                </h3>
+                <ul class="text-gray-300 space-y-2">
+                    <li class="flex items-center"><span class="text-yellow-400 mr-2">⚡</span> Animations & zooms dynamiques</li>
+                    <li class="flex items-center"><span class="text-yellow-400 mr-2">⚡</span> Images de stock intégrées</li>
+                    <li class="flex items-center"><span class="text-yellow-400 mr-2">⚡</span> Effets & SFX</li>
+                    <li class="flex items-center"><span class="text-yellow-400 mr-2">⚡</span> Transitions créatives</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offres & Tarifs par catégorie -->
+    <section class="px-6 py-20 max-w-6xl mx-auto">
+        <h2 class="text-5xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent text-center mb-16" style="text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);">Offres & Tarifs</h2>
+        
+        <!-- Première ligne : Podcasts et Facecams -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <!-- Podcasts -->
+            <div>
+                <h3 class="text-2xl font-bold text-purple-400 mb-4">Podcasts</h3>
+                <div class="bg-gray-900 overflow-hidden rounded-2xl" style="box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="py-3 px-6 text-left font-semibold text-gray-200">Durée</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Simple</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Dynamique *</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">15–30 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">70–90 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">120–140 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">30–45 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">90–110 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">130–160 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">45–60 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">110–130 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">150–180 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">1h–1h30</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">140–170 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">180–210 €</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-6">1h30–2h</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">170–200 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">210–250 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Facecams -->
+            <div>
+                <h3 class="text-2xl font-bold text-blue-400 mb-4">Facecams</h3>
+                <div class="bg-gray-900 overflow-hidden rounded-2xl" style="box-shadow: 0 0 15px rgba(96, 165, 250, 0.2);">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="py-3 px-6 text-left font-semibold text-gray-200">Durée</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Simple</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Dynamique *</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">3–5 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">50–70 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">120–150 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">5–10 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">70–90 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">140–170 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">10–15 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">90–110 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">160–190 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">15–20 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">110–130 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">180–210 €</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-6">20–30 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">130–150 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">200–240 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deuxième ligne : Micro-trottoirs et Shorts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Micro-trottoirs -->
+            <div>
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-blue-400 bg-clip-text text-transparent mb-4">Micro-trottoirs</h3>
+                <div class="bg-gray-900 overflow-hidden rounded-2xl" style="box-shadow: 0 0 15px rgba(250, 204, 21, 0.2);">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="py-3 px-6 text-left font-semibold text-gray-200">Durée</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Simple</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Dynamique *</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">3–5 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">60–80 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">110–140 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">5–10 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">80–100 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">140–180 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">10–15 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">100–120 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">170–210 €</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-6">15–20 min</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">120–150 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">200–250 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Shorts -->
+            <div>
+                <h3 class="text-2xl font-bold text-green-400 mb-4">Shorts</h3>
+                <div class="bg-gray-900 overflow-hidden rounded-2xl" style="box-shadow: 0 0 15px rgba(74, 222, 128, 0.2);">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-800">
+                                <th class="py-3 px-6 text-left font-semibold text-gray-200">Format</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Simple</th>
+                                <th class="py-3 px-6 text-center font-semibold text-gray-200">Dynamique *</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-300">
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">Unitaire (&lt;60 s)</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">20 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">40 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">Pack 5</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">90 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">180 €</td>
+                            </tr>
+                            <tr class="border-b border-gray-700">
+                                <td class="py-3 px-6">Pack 10</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">170 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">340 €</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-6">Pack 15</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">240 €</td>
+                                <td class="py-3 px-6 text-center font-medium text-purple-300">500 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Processus -->
+    <section class="px-6 py-16 max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-12" style="text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);">Notre Processus</h2>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-4">
+        
+        <div class="flex flex-col items-center process-icon">
+          <span class="text-purple-400 text-5xl">🎥</span>
+          <p class="mt-3 text-lg text-gray-300 font-medium">Réception</p>
+        </div>
+
+        <div class="hidden md:block arrow">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+
+        <div class="flex flex-col items-center process-icon">
+          <span class="text-pink-400 text-5xl">✂️</span>
+          <p class="mt-3 text-lg text-gray-300 font-medium">Montage</p>
+        </div>
+
+        <div class="hidden md:block arrow">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+
+        <div class="flex flex-col items-center process-icon">
+          <span class="text-blue-400 text-5xl">⏱️</span>
+          <p class="mt-3 text-lg text-gray-300 font-medium">Corrections</p>
+        </div>
+
+        <div class="hidden md:block arrow">
+          <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </div>
+
+        <div class="flex flex-col items-center process-icon">
+          <span class="text-green-400 text-5xl">📦</span>
+          <p class="mt-3 text-lg text-gray-300 font-medium">Livraison</p>
+        </div>
+
+      </div>
+      <p class="mt-8 text-sm text-gray-500">
+        Délais : 48h (formats courts) • 3–5 jours (formats longs)
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="px-6 py-20 max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-10" style="text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);">FAQ</h2>
+      <div class="space-y-8 text-gray-300 text-lg">
+        
+        <div>
+          <p class="font-semibold text-white mb-1">Qu'est-ce que le montage dynamique ?</p>
+          <p class="text-gray-400">
+            Le montage dynamique inclut une intro animée, des effets, des incrustations (définitions, titres, images de stock, SFX) 
+            pour rendre le contenu plus percutant et engageant.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-white mb-1">Les formats courts simples comprennent-ils les sous-titres ?</p>
+          <p class="text-gray-400">
+            Oui, les formats courts simples incluent des sous-titres basiques synchronisés automatiquement.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-white mb-1">Qu'est-ce qu'un format court dynamique ?</p>
+          <p class="text-gray-400">
+            C'est un short avec animations percutantes, transitions travaillées, SFX et incrustations créatives 
+            pour maximiser la visibilité sur TikTok, Instagram Reels ou YouTube Shorts.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-white mb-1">Puis-je mixer plusieurs formats ?</p>
+          <p class="text-gray-400">
+            Oui, il est possible de mixer différents formats (par exemple un podcast + extraits shorts) 
+            avec un tarif adapté.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-white mb-1">Quels sont les délais ?</p>
+          <p class="text-gray-400">
+            Livraison standard : 48h pour les formats courts, 3 à 5 jours pour les formats longs.  
+            Livraison express 24h disponible en option.
+          </p>
+        </div>
+
+        <div>
+          <p class="font-semibold text-white mb-1">Combien de corrections sont incluses ?</p>
+          <p class="text-gray-400">
+            Les corrections sont illimitées dans le cadre du projet, pour garantir un rendu final qui correspond à vos attentes.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section class="px-6 py-20 max-w-4xl mx-auto text-center">
+        <h2 class="text-4xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent mb-8" style="text-shadow: 0 0 20px rgba(34, 211, 238, 0.6), 0 0 40px rgba(96, 165, 250, 0.4);">Prêt à commencer ?</h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Contactez-nous pour discuter de votre projet et recevoir un devis personnalisé
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-center">
+            <a href="mailto:lacapsulebusinesspro@gmail.com" 
+               class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                📧 Email
+            </a>
+            <a href="https://wa.me/33761579576" target="_blank" rel="noopener noreferrer"
+               class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                💬 WhatsApp
+            </a>
+            <a href="https://www.instagram.com/ea_editingagency/" target="_blank" rel="noopener noreferrer"
+               class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                📸 Instagram
+            </a>
+            <a href="https://bento.me/editing-agency" target="_blank" rel="noopener noreferrer"
+               class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg text-center">
+                🎨 Portfolio
+            </a>
+        </div>
+        
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 text-gray-500 border-t border-gray-800">
+        <p>&copy; 2024 Editing Agency. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Animation au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observer tous les éléments avec animation
+        document.querySelectorAll('.card-hover').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Effet de hover sur les lignes de tableau
+        document.querySelectorAll('.table-row').forEach(row => {
+            row.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.02)';
+            });
+            
+            row.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9882b8bbf3c611f4',t:'MTc1OTM5MjYwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
