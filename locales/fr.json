@@ -26,21 +26,30 @@
   "micro": "Micro-trottoirs",
   "shorts": "Formats courts",
 
+  "col_duration": "Durée",
+  "col_simple": "Simple",
+  "col_dynamic": "Dynamique *",
+  "col_format": "Format",
+  "short_unit": "Unitaire (<60 s)",
+  "short_pack5": "Pack 5",
+  "short_pack10": "Pack 10",
+  "short_pack15": "Pack 15",
+
   "process_title": "Notre Processus",
-  "process_steps": ["Réception", "Montage", "Corrections", "Livraison"],
-  "process_delay": "Délais : 48h (formats courts) • 3–5 jours (formats longs)",
+  "process_steps": ["Réception des rushs", "Montage", "Corrections", "Livraison"],
+  "process_delay": "Délais standards : 48h (formats courts) • 3–5 jours (formats longs)",
 
   "faq_title": "FAQ",
-  "faq_dynamic_q": "Qu'est-ce que le montage dynamique ?",
-  "faq_dynamic_a": "Le montage dynamique inclut une intro animée, des effets, des incrustations (définitions, titres, images de stock, SFX) pour rendre le contenu plus percutant et engageant.",
+  "faq_dynamic_q": "Qu’est-ce que le montage dynamique ?",
+  "faq_dynamic_a": "Le montage dynamique inclut une intro animée, des effets, des incrustations (définitions, titres, images de stock, SFX) pour rendre le contenu plus percutant.",
   "faq_subs_q": "Les formats courts simples comprennent-ils les sous-titres ?",
-  "faq_subs_a": "Oui, les formats courts simples incluent des sous-titres basiques synchronisés automatiquement.",
-  "faq_shorts_q": "Qu'est-ce qu'un format court dynamique ?",
-  "faq_shorts_a": "C'est un short avec animations percutantes, transitions travaillées, SFX et incrustations créatives pour maximiser la visibilité sur TikTok, Instagram Reels ou YouTube Shorts.",
+  "faq_subs_a": "Oui, le montage simple des shorts inclut des sous-titres basiques synchronisés automatiquement.",
+  "faq_shorts_q": "Qu’est-ce qu’un format court dynamique ?",
+  "faq_shorts_a": "Un short dynamique intègre des animations percutantes, des incrustations créatives, des transitions travaillées et des SFX pour maximiser l’engagement sur TikTok, Instagram Reels ou YouTube Shorts.",
   "faq_mix_q": "Puis-je mixer plusieurs formats ?",
-  "faq_mix_a": "Oui, il est possible de mixer différents formats (par exemple un podcast + extraits shorts) avec un tarif adapté.",
-  "faq_delays_q": "Quels sont les délais ?",
-  "faq_delays_a": "Livraison standard : 48h pour les formats courts, 3 à 5 jours pour les formats longs. Livraison express 24h disponible en option.",
+  "faq_mix_a": "Oui, nous pouvons réaliser un mix (ex. podcast + extraits shorts) avec un tarif adapté.",
+  "faq_delays_q": "Quels délais ?",
+  "faq_delays_a": "Livraison standard : 48h pour formats courts, 3 à 5 jours pour formats longs. Livraison express 24h disponible en option.",
   "faq_corrections_q": "Combien de corrections sont incluses ?",
   "faq_corrections_a": "Les corrections sont illimitées dans le cadre du projet, pour garantir un rendu final qui correspond à vos attentes.",
 
@@ -51,5 +60,8 @@
   "contact_insta": "📸 Instagram",
   "contact_portfolio": "🎨 Portfolio",
 
-  "whatsapp_msg": "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :"
+  "whatsapp_msg": "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :",
+
+  "meta_title": "Editing Agency — agence de montage vidéo",
+  "meta_desc": "Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides."
 }
