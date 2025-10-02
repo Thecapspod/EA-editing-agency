@@ -26,6 +26,15 @@
   "micro": "Street interviews",
   "shorts": "Short-form content",
 
+  "col_duration": "Duration",
+  "col_simple": "Simple",
+  "col_dynamic": "Dynamic *",
+  "col_format": "Format",
+  "short_unit": "Single (<60 s)",
+  "short_pack5": "Pack of 5",
+  "short_pack10": "Pack of 10",
+  "short_pack15": "Pack of 15",
+
   "process_title": "Our Process",
   "process_steps": ["Footage reception", "Editing", "Revisions", "Delivery"],
   "process_delay": "Standard delivery: 48h (shorts) • 3–5 days (long formats)",
@@ -51,5 +60,8 @@
   "contact_insta": "📸 Instagram",
   "contact_portfolio": "🎨 Portfolio",
 
-  "whatsapp_msg": "Hello, I'm interested in your video editing services. Here are my needs:"
+  "whatsapp_msg": "Hello, I'm interested in your video editing services. Here are my needs:",
+
+  "meta_title": "Editing Agency — video editing agency",
+  "meta_desc": "Premium video editing for creators and businesses: podcasts, facecams, street interviews, shorts. Unlimited revisions, fast delivery."
 }
