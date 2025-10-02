@@ -2,191 +2,180 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="meta_title">Editing Agency — agence de montage vidéo</title>
-  <meta name="description" data-i18n="meta_desc" content="Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides.">
-  <link rel="canonical" href="https://ea-editing-agency.vercel.app/" />
-  <meta name="theme-color" content="#0b0b0f">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editing Agency — agence de montage vidéo</title>
+  <meta name="description" content="Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides.">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
+  <link rel="preload" href="/locales/en.json" as="fetch" crossorigin>
   <style>
-    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
-    .gradient-text{background:linear-gradient(to right,#a855f7,#ec4899,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-    .animate-float{animation:float 3s ease-in-out infinite}
+    .gradient-text{background:linear-gradient(90deg,#a855f7,#ec4899,#60a5fa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+    .card{background:#0f172a;border:1px solid #1f2937;border-radius:1rem}
+    .glow{filter:drop-shadow(0 0 10px rgba(34,211,238,.4))}
   </style>
 </head>
-<body class="bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen font-sans">
-
+<body class="bg-black text-white min-h-screen">
   <!-- Switch langue -->
-  <div class="fixed top-4 right-4 z-[200]">
-    <button id="lang-toggle"
-      class="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm px-3 py-1.5 rounded-lg backdrop-blur">
-      <span id="flag" aria-hidden="true">🇬🇧</span>
-      <span id="lang-label">EN</span>
-    </button>
-  </div>
+  <button id="lang-toggle" class="fixed top-4 right-4 z-50 flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/10 rounded-xl px-3 py-1.5">
+    <span id="flag">🇬🇧</span><span id="lang-label">EN</span>
+  </button>
 
   <!-- HERO -->
-  <section class="relative flex flex-col items-center justify-center py-24 text-center">
-    <h1 class="text-6xl md:text-7xl font-extrabold gradient-text animate-float" data-i18n="hero_h1">Editing Agency</h1>
-    <p class="mt-6 text-2xl text-gray-200 max-w-3xl mx-auto font-semibold" data-i18n="hero_h2">
-      Créateurs & entreprises : on sublime vos idées
-    </p>
-    <p class="mt-3 text-lg text-gray-400 max-w-4xl mx-auto" data-i18n="hero_h3">
-      Podcasts, interviews, formats courts ou contenus corporate : tous vos projets transformés en vidéos percutantes.
-    </p>
+  <section class="px-6 py-16 text-center max-w-5xl mx-auto">
+    <h1 class="text-6xl md:text-7xl font-extrabold gradient-text" data-i18n="hero_h1">Editing Agency</h1>
+    <p class="mt-6 text-2xl text-gray-200 font-semibold" data-i18n="hero_h2">Créateurs & entreprises : on sublime vos idées</p>
+    <p class="mt-4 text-lg text-gray-400" data-i18n="hero_h3">Podcasts, interviews, formats courts ou contenus corporate : tous vos projets transformés en vidéos percutantes.</p>
   </section>
 
   <!-- TYPES -->
-  <section class="px-6 md:px-10 py-12 md:py-16 max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-cyan-300 mb-8" data-i18n="types_title">Types de montage</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl">
-        <h3 class="text-2xl font-semibold text-purple-400 mb-4" data-i18n="simple_title">Montage simple</h3>
-        <ul class="text-gray-300 space-y-2" data-i18n-list="simple_list">
-          <!-- Rempli par i18n -->
+  <section class="px-6 py-10 max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-8 text-center" data-i18n="types_title">Types de montage</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card p-6">
+        <h3 class="text-2xl text-purple-300 mb-4 font-semibold" data-i18n="simple_title">Montage simple</h3>
+        <ul class="space-y-2 list-disc list-inside text-gray-300" data-i18n-list="simple_list">
+          <li>Dérush & nettoyage</li><li>Zooms & cuts de base</li><li>Musique de fond</li><li>Transitions simples</li><li>Sous-titrages basiques (formats courts)</li>
         </ul>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl">
-        <h3 class="text-2xl font-semibold text-pink-400 mb-4" data-i18n="dynamic_title">Montage dynamique *</h3>
-        <ul class="text-gray-300 space-y-2" data-i18n-list="dynamic_list">
-          <!-- Rempli par i18n -->
+      <div class="card p-6">
+        <h3 class="text-2xl text-pink-300 mb-4 font-semibold" data-i18n="dynamic_title">Montage dynamique *</h3>
+        <ul class="space-y-2 list-disc list-inside text-gray-300" data-i18n-list="dynamic_list">
+          <li>Animations & zooms dynamiques</li><li>Images de stock intégrées</li><li>Effets & SFX</li><li>Transitions créatives</li>
         </ul>
       </div>
     </div>
   </section>
 
   <!-- OFFRES & TARIFS -->
-  <section class="px-6 py-16 max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-cyan-300 text-center mb-12" data-i18n="offers_title">Offres & Tarifs</h2>
+  <section class="px-6 py-14 max-w-7xl mx-auto">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-10 text-center" data-i18n="offers_title">Offres & Tarifs</h2>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    <div class="grid lg:grid-cols-2 gap-8">
       <!-- Podcasts -->
-      <div>
-        <h3 class="text-2xl font-bold text-purple-400 mb-3" data-i18n="podcasts">Podcasts</h3>
-        <div class="bg-gray-900 rounded-2xl shadow">
-          <div class="overflow-x-auto">
-            <table class="w-full table-fixed text-gray-200">
-              <thead class="bg-gray-800/70">
-                <tr>
-                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-800">
-                <tr><td class="py-3 px-4">15–30 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">70–90 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">120–140 €</td></tr>
-                <tr><td class="py-3 px-4">30–45 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">90–110 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">130–160 €</td></tr>
-                <tr><td class="py-3 px-4">45–60 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">110–130 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">150–180 €</td></tr>
-                <tr><td class="py-3 px-4">1h–1h30</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">140–170 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">180–210 €</td></tr>
-                <tr><td class="py-3 px-4">1h30–2h</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">170–200 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">210–250 €</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="card p-6">
+        <h3 class="text-2xl font-bold text-purple-300 mb-4" data-i18n="podcasts">Podcasts</h3>
+        <table class="w-full text-left text-gray-300">
+          <thead class="text-gray-200">
+            <tr>
+              <th class="py-2" data-i18n="col_duration">Durée</th>
+              <th class="py-2 text-center" data-i18n="col_simple">Simple</th>
+              <th class="py-2 text-center" data-i18n="col_dynamic">Dynamique *</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="py-2">15–30 min</td><td class="py-2 text-center">70–90 €</td><td class="py-2 text-center">120–140 €</td></tr>
+            <tr><td class="py-2">30–45 min</td><td class="py-2 text-center">90–110 €</td><td class="py-2 text-center">130–160 €</td></tr>
+            <tr><td class="py-2">45–60 min</td><td class="py-2 text-center">110–130 €</td><td class="py-2 text-center">150–180 €</td></tr>
+            <tr><td class="py-2">1h–1h30</td><td class="py-2 text-center">140–170 €</td><td class="py-2 text-center">180–210 €</td></tr>
+            <tr><td class="py-2">1h30–2h</td><td class="py-2 text-center">170–200 €</td><td class="py-2 text-center">210–250 €</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Facecams -->
-      <div>
-        <h3 class="text-2xl font-bold text-blue-400 mb-3" data-i18n="facecams">Facecams</h3>
-        <div class="bg-gray-900 rounded-2xl shadow">
-          <div class="overflow-x-auto">
-            <table class="w-full table-fixed text-gray-200">
-              <thead class="bg-gray-800/70">
-                <tr>
-                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-800">
-                <tr><td class="py-3 px-4">3–5 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">50–70 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">120–150 €</td></tr>
-                <tr><td class="py-3 px-4">5–10 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">70–90 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">140–170 €</td></tr>
-                <tr><td class="py-3 px-4">10–15 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">90–110 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">160–190 €</td></tr>
-                <tr><td class="py-3 px-4">15–20 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">110–130 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">180–210 €</td></tr>
-                <tr><td class="py-3 px-4">20–30 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">130–150 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">200–240 €</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="card p-6">
+        <h3 class="text-2xl font-bold text-blue-300 mb-4" data-i18n="facecams">Facecams</h3>
+        <table class="w-full text-left text-gray-300">
+          <thead class="text-gray-200">
+            <tr>
+              <th class="py-2" data-i18n="col_duration">Durée</th>
+              <th class="py-2 text-center" data-i18n="col_simple">Simple</th>
+              <th class="py-2 text-center" data-i18n="col_dynamic">Dynamique *</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="py-2">3–5 min</td><td class="py-2 text-center">50–70 €</td><td class="py-2 text-center">120–150 €</td></tr>
+            <tr><td class="py-2">5–10 min</td><td class="py-2 text-center">70–90 €</td><td class="py-2 text-center">140–170 €</td></tr>
+            <tr><td class="py-2">10–15 min</td><td class="py-2 text-center">90–110 €</td><td class="py-2 text-center">160–190 €</td></tr>
+            <tr><td class="py-2">15–20 min</td><td class="py-2 text-center">110–130 €</td><td class="py-2 text-center">180–210 €</td></tr>
+            <tr><td class="py-2">20–30 min</td><td class="py-2 text-center">130–150 €</td><td class="py-2 text-center">200–240 €</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Micro-trottoirs -->
-      <div>
-        <h3 class="text-2xl font-bold text-yellow-300 mb-3" data-i18n="micro">Micro-trottoirs</h3>
-        <div class="bg-gray-900 rounded-2xl shadow">
-          <div class="overflow-x-auto">
-            <table class="w-full table-fixed text-gray-200">
-              <thead class="bg-gray-800/70">
-                <tr>
-                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-800">
-                <tr><td class="py-3 px-4">3–5 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">60–80 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">110–140 €</td></tr>
-                <tr><td class="py-3 px-4">5–10 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">80–100 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">140–180 €</td></tr>
-                <tr><td class="py-3 px-4">10–15 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">100–120 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">170–210 €</td></tr>
-                <tr><td class="py-3 px-4">15–20 min</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">120–150 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">200–250 €</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="card p-6">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-4" data-i18n="micro">Micro-trottoirs</h3>
+        <table class="w-full text-left text-gray-300">
+          <thead class="text-gray-200">
+            <tr>
+              <th class="py-2" data-i18n="col_duration">Durée</th>
+              <th class="py-2 text-center" data-i18n="col_simple">Simple</th>
+              <th class="py-2 text-center" data-i18n="col_dynamic">Dynamique *</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="py-2">3–5 min</td><td class="py-2 text-center">60–80 €</td><td class="py-2 text-center">110–140 €</td></tr>
+            <tr><td class="py-2">5–10 min</td><td class="py-2 text-center">80–100 €</td><td class="py-2 text-center">140–180 €</td></tr>
+            <tr><td class="py-2">10–15 min</td><td class="py-2 text-center">100–120 €</td><td class="py-2 text-center">170–210 €</td></tr>
+            <tr><td class="py-2">15–20 min</td><td class="py-2 text-center">120–150 €</td><td class="py-2 text-center">200–250 €</td></tr>
+          </tbody>
+        </table>
       </div>
 
       <!-- Shorts -->
-      <div>
-        <h3 class="text-2xl font-bold text-green-400 mb-3" data-i18n="shorts">Formats courts</h3>
-        <div class="bg-gray-900 rounded-2xl shadow">
-          <div class="overflow-x-auto">
-            <table class="w-full table-fixed text-gray-200">
-              <thead class="bg-gray-800/70">
-                <tr>
-                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_format">Format</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
-                </tr>
-              </thead>
-              <tbody class="divide-y divide-gray-800">
-                <tr><td class="py-3 px-4" data-i18n="short_unit">Unitaire (&lt;60 s)</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">20 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">40 €</td></tr>
-                <tr><td class="py-3 px-4" data-i18n="short_pack5">Pack 5</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">90 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">180 €</td></tr>
-                <tr><td class="py-3 px-4" data-i18n="short_pack10">Pack 10</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">170 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">340 €</td></tr>
-                <tr><td class="py-3 px-4" data-i18n="short_pack15">Pack 15</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">240 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">500 €</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class="card p-6">
+        <h3 class="text-2xl font-bold text-green-300 mb-4" data-i18n="shorts">Formats courts</h3>
+        <table class="w-full text-left text-gray-300">
+          <thead class="text-gray-200">
+            <tr>
+              <th class="py-2" data-i18n="col_format">Format</th>
+              <th class="py-2 text-center" data-i18n="col_simple">Simple</th>
+              <th class="py-2 text-center" data-i18n="col_dynamic">Dynamique *</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="py-2" data-i18n="short_unit">Unitaire (&lt;60 s)</td><td class="py-2 text-center">20 €</td><td class="py-2 text-center">40 €</td></tr>
+            <tr><td class="py-2" data-i18n="short_pack5">Pack 5</td><td class="py-2 text-center">90 €</td><td class="py-2 text-center">180 €</td></tr>
+            <tr><td class="py-2" data-i18n="short_pack10">Pack 10</td><td class="py-2 text-center">170 €</td><td class="py-2 text-center">340 €</td></tr>
+            <tr><td class="py-2" data-i18n="short_pack15">Pack 15</td><td class="py-2 text-center">240 €</td><td class="py-2 text-center">500 €</td></tr>
+          </tbody>
+        </table>
       </div>
-
     </div>
   </section>
 
   <!-- PROCESS -->
   <section class="px-6 py-16 max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-cyan-300 mb-10" data-i18n="process_title">Notre Processus</h2>
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
-      <div class="flex flex-col items-center"><span class="text-purple-400 text-5xl">🎥</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.0">Réception</p></div>
-      <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center"><span class="text-pink-400 text-5xl">✂️</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.1">Montage</p></div>
-      <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center"><span class="text-blue-400 text-5xl">⏱️</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.2">Corrections</p></div>
-      <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center"><span class="text-green-400 text-5xl">📦</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.3">Livraison</p></div>
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-8" data-i18n="process_title">Notre Processus</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-gray-300">
+      <div><div class="text-4xl">🎥</div><div class="mt-2" data-i18n="process_steps.0">Réception des rushs</div></div>
+      <div><div class="text-4xl">✂️</div><div class="mt-2" data-i18n="process_steps.1">Montage</div></div>
+      <div><div class="text-4xl">⏱️</div><div class="mt-2" data-i18n="process_steps.2">Corrections</div></div>
+      <div><div class="text-4xl">📦</div><div class="mt-2" data-i18n="process_steps.3">Livraison</div></div>
     </div>
-    <p class="mt-6 text-sm text-gray-500" data-i18n="process_delay">Délais : 48h (formats courts) • 3–5 jours (formats longs)</p>
+    <p class="mt-6 text-sm text-gray-400" data-i18n="process_delay">Délais standards : 48h (formats courts) • 3–5 jours (formats longs)</p>
   </section>
 
   <!-- FAQ -->
-  <section class="px-6 py-16 max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold text-cyan-300 mb-8" data-i18n="faq_title">FAQ</h2>
-    <div class="space-y-6 text-gray-300 text-lg">
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_dynamic_q">Qu’est-ce que le montage dynamique ?</p><p class="text-gray-400" data-i18n="faq_dynamic_a">…</p></div>
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_subs_q">Les formats courts simples comprennent-ils les sous-titres ?</p><p class="text-gray-400" data-i18n="faq_subs_a">…</p></div>
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_shorts_q">Qu’est-ce qu’un format court dynamique ?</p><p class="text-gray-400" data-i18n="faq_shorts_a">…</p></div>
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_mix_q">Puis-je mixer plusieurs formats ?</p><p class="text-gray-400" data-i18n="faq_mix_a">…</p></div>
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_delays_q">Quels sont les délais ?</p><p class="text-gray-400" data-i18n="faq_delays_a">…</p></div>
-      <div><p class="font-semibold text-white mb-1" data-i18n="faq_corrections_q">Combien de corrections sont incluses ?</p><p class="text-gray-400" data-i18n="faq_corrections_a">…</p></div>
+  <section class="px-6 py-16 max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-cyan-300 glow mb-10" data-i18n="faq_title">FAQ</h2>
+
+    <div class="space-y-7 text-gray-300">
+      <div>
+        <p class="font-semibold" data-i18n="faq_dynamic_q">Qu’est-ce que le montage dynamique ?</p>
+        <p class="text-gray-400" data-i18n="faq_dynamic_a">Le montage dynamique inclut...</p>
+      </div>
+      <div>
+        <p class="font-semibold" data-i18n="faq_subs_q">Les formats courts simples comprennent-ils les sous-titres ?</p>
+        <p class="text-gray-400" data-i18n="faq_subs_a">Oui, les formats courts simples...</p>
+      </div>
+      <div>
+        <p class="font-semibold" data-i18n="faq_shorts_q">Qu’est-ce qu’un format court dynamique ?</p>
+        <p class="text-gray-400" data-i18n="faq_shorts_a">Un short dynamique intègre...</p>
+      </div>
+      <div>
+        <p class="font-semibold" data-i18n="faq_mix_q">Puis-je mixer plusieurs formats ?</p>
+        <p class="text-gray-400" data-i18n="faq_mix_a">Oui, nous pouvons...</p>
+      </div>
+      <div>
+        <p class="font-semibold" data-i18n="faq_delays_q">Quels délais ?</p>
+        <p class="text-gray-400" data-i18n="faq_delays_a">Livraison standard...</p>
+      </div>
+      <div>
+        <p class="font-semibold" data-i18n="faq_corrections_q">Combien de corrections sont incluses ?</p>
+        <p class="text-gray-400" data-i18n="faq_corrections_a">Corrections illimitées...</p>
+      </div>
     </div>
   </section>
 
@@ -195,94 +184,99 @@
     <h2 class="text-4xl font-bold text-cyan-300 mb-6" data-i18n="contact_title">Prêt à commencer ?</h2>
     <p class="text-lg text-gray-300 mb-8" data-i18n="contact_subtitle">Contactez-nous pour un devis rapide.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a aria-label="Email" href="mailto:lacapsulebusinesspro@gmail.com" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_email">📧 Email</a>
-      <a aria-label="WhatsApp" href="https://wa.me/33761579576" target="_blank" rel="noopener" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_whatsapp">💬 WhatsApp</a>
-      <a aria-label="Instagram" href="https://www.instagram.com/ea_editingagency/" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_insta">📸 Instagram</a>
-      <a aria-label="Portfolio" href="https://bento.me/editing-agency" target="_blank" rel="noopener" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_portfolio">🎨 Portfolio</a>
+      <a aria-label="Email" href="mailto:lacapsulebusinesspro@gmail.com" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-full text-center" data-i18n="contact_email">📧 Email</a>
+      <a aria-label="WhatsApp" href="https://wa.me/33761579576" target="_blank" rel="noopener" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-full text-center" data-i18n="contact_whatsapp">💬 WhatsApp</a>
+      <a aria-label="Instagram" href="https://www.instagram.com/ea_editingagency/" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-bold py-4 px-6 rounded-full text-center" data-i18n="contact_insta">📸 Instagram</a>
+      <a aria-label="Portfolio" href="https://bento.me/editing-agency" target="_blank" rel="noopener" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-full text-center" data-i18n="contact_portfolio">🎨 Portfolio</a>
     </div>
   </section>
 
-  <!-- CTA WhatsApp mobile -->
-  <a href="https://wa.me/33761579576"
-     target="_blank" rel="noopener noreferrer"
-     class="fixed bottom-6 right-6 md:hidden w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg z-[100]"
+  <!-- CTA WA flottants -->
+  <a href="https://wa.me/33761579576?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20montage%20vid%C3%A9o.%20Voici%20mon%20besoin%20%3A"
+     target="_blank" rel="noopener"
+     class="fixed bottom-6 right-6 md:hidden w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg z-50"
      aria-label="WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 .5C5.648.5.5 5.648.5 12c0 2.114.552 4.159 1.6 5.96L.5 23.5l5.711-1.574A11.44 11.44 0 0 0 12 23.5c6.352 0 11.5-5.148 11.5-11.5S18.352.5 12 .5Zm0 20.7a9.2 9.2 0 0 1-4.694-1.3l-.336-.2-3.389.934.922-3.312-.219-.344A9.194 9.194 0 1 1 12 21.2Zm5.448-6.946c-.297-.149-1.758-.867-2.031-.964-.273-.099-.472-.148-.67.149-.199.297-.77.964-.945 1.162-.174.199-.348.223-.645.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.76-1.654-2.057-.174-.297-.018-.458.131-.606.135-.134.297-.348.446-.522.149-.174.199-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.67-1.611-.918-2.211-.242-.581-.487-.5-.67-.51-.173-.008-.372-.01-.571-.01s-.521.074-.795.372c-.273.297-1.043 1.018-1.043 2.48 0 1.463 1.068 2.875 1.217 3.073.149.198 2.102 3.208 5.1 4.495.713.308 1.268.492 1.701.63.715.228 1.364.196 1.877.119.573-.085 1.758-.719 2.007-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347Z"/>
-    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 2.11.55 4.16 1.6 5.96L.5 23.5l5.71-1.57A11.44 11.44 0 0 0 12 23.5c6.35 0 11.5-5.15 11.5-11.5S18.35.5 12 .5Zm0 20.7a9.2 9.2 0 0 1-4.7-1.3l-.34-.2-3.39.93.92-3.31-.22-.35A9.19 9.19 0 1 1 12 21.2Zm5.45-6.95c-.3-.15-1.76-.87-2.03-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.95 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17 0-.37-.01-.57-.01s-.52.07-.8.37c-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.21 5.1 4.5.71.31 1.27.49 1.7.63.72.23 1.36.2 1.88.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35Z"/></svg>
+  </a>
+  <a href="https://wa.me/33761579576?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20montage%20vid%C3%A9o.%20Voici%20mon%20besoin%20%3A"
+     target="_blank" rel="noopener"
+     class="hidden md:flex fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-5 rounded-full shadow-lg items-center gap-2 z-50">
+     💬 WhatsApp
   </a>
 
-  <footer class="text-center py-8 text-gray-500 border-t border-gray-800">
-    <p>&copy; 2024 Editing Agency. Tous droits réservés.</p>
+  <footer class="text-center py-10 text-gray-500 border-t border-white/10">
+    <p>© 2024 Editing Agency. Tous droits réservés.</p>
   </footer>
 
+  <!-- i18n -->
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const DEFAULTS = {
-    col_duration:"Durée", col_simple:"Simple", col_dynamic:"Dynamique *", col_format:"Format",
-    short_unit:"Unitaire (<60 s)", short_pack5:"Pack 5", short_pack10:"Pack 10", short_pack15:"Pack 15",
-    meta_title:"Editing Agency — agence de montage vidéo",
-    meta_desc:"Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides."
-  };
+  document.addEventListener("DOMContentLoaded", () => {
+    const DEFAULTS = {
+      col_duration:"Durée", col_simple:"Simple", col_dynamic:"Dynamique *", col_format:"Format",
+      short_unit:"Unitaire (<60 s)", short_pack5:"Pack 5", short_pack10:"Pack 10", short_pack15:"Pack 15",
+      meta_title:"Editing Agency — agence de montage vidéo",
+      meta_desc:"Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides."
+    };
 
-  async function loadLang(lang){
-    try{
-      const res = await fetch(`./locales/${lang}.json`, { cache:"no-store" });
-      if(!res.ok) throw new Error(`locales/${lang}.json introuvable`);
-      const dict = await res.json();
+    async function fetchDict(lang){
+      const url = `/locales/${lang}.json`;
+      const res = await fetch(url,{cache:"no-store"});
+      if(!res.ok) throw new Error(`HTTP ${res.status} ${url}`);
+      return res.json();
+    }
 
-      // Remplir textes simples (ne remplace que si la clé existe)
+    function setWhatsApp(dict){
+      const msg = dict.whatsapp_msg || "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :";
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
+        a.href = a.href.split("?")[0] + "?text=" + encodeURIComponent(msg);
+      });
+    }
+
+    function applyDict(dict){
       document.querySelectorAll("[data-i18n]").forEach(el=>{
         const key = el.getAttribute("data-i18n");
         const val = key.split('.').reduce((a,k)=>a&&a[k], dict);
-        if(val != null) el.textContent = val;
-        else if (DEFAULTS[key]) el.textContent = DEFAULTS[key]; // fallback colonnes/meta
+        if(val!=null) el.textContent = val;
+        else if(DEFAULTS[key]) el.textContent = DEFAULTS[key];
       });
-
-      // Remplir listes (ne vide que si tableau trouvé)
       document.querySelectorAll("[data-i18n-list]").forEach(ul=>{
         const key = ul.getAttribute("data-i18n-list");
         const arr = dict[key];
-        if (Array.isArray(arr)) {
+        if(Array.isArray(arr)){
           ul.innerHTML = "";
           arr.forEach(item=>{
-            const li = document.createElement("li");
+            const li=document.createElement("li");
             li.textContent = String(item);
             ul.appendChild(li);
           });
         }
       });
-
-      // Lien WhatsApp avec message localisé
-      const msg = dict.whatsapp_msg ||
-        "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :";
-      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
-        a.href = a.href.split("?")[0] + "?text=" + encodeURIComponent(msg);
-      });
-
-      // Meta + état bouton
-      document.documentElement.lang = lang;
       document.title = dict.meta_title || DEFAULTS.meta_title;
       const md = document.querySelector('meta[name="description"]');
       if(md) md.setAttribute("content", dict.meta_desc || DEFAULTS.meta_desc);
-      document.getElementById("flag").textContent = lang==="fr" ? "🇬🇧" : "🇫🇷";
-      document.getElementById("lang-label").textContent = lang==="fr" ? "EN" : "FR";
-
-      localStorage.setItem("lang", lang);
-    }catch(e){
-      console.error("[i18n]", e);
-      alert("Fichier de langue manquant ou invalide.");
+      setWhatsApp(dict);
     }
-  }
 
-  // Toggle
-  document.getElementById("lang-toggle")?.addEventListener("click", ()=>{
-    loadLang(document.documentElement.lang==="fr" ? "en" : "fr");
+    async function loadLang(lang){
+      try{
+        const dict = await fetchDict(lang);
+        applyDict(dict);
+        document.documentElement.lang = lang;
+        localStorage.setItem("lang", lang);
+        document.getElementById("flag").textContent = lang==="fr"?"🇬🇧":"🇫🇷";
+        document.getElementById("lang-label").textContent = lang==="fr"?"EN":"FR";
+      }catch(e){
+        console.error("[i18n]", e);
+        if(lang!=="fr"){ loadLang("fr"); }
+      }
+    }
+
+    document.getElementById("lang-toggle").addEventListener("click",()=>{
+      loadLang(document.documentElement.lang==="fr"?"en":"fr");
+    });
+
+    loadLang(localStorage.getItem("lang") || "fr");
   });
-
-  // Initial
-  loadLang(localStorage.getItem("lang") || "fr");
-});
   </script>
 </body>
 </html>
