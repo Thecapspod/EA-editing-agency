@@ -1,0 +1,55 @@
+{
+  "hero_h1": "Editing Agency",
+  "hero_h2": "Creators & businesses: we elevate your ideas",
+  "hero_h3": "Podcasts, interviews, short-form content or corporate videos: we turn all your projects into powerful visuals.",
+
+  "types_title": "Editing Types",
+  "simple_title": "Simple edit",
+  "dynamic_title": "Dynamic edit *",
+  "simple_list": [
+    "Rush sorting & cleanup",
+    "Basic zooms & cuts",
+    "Background music",
+    "Simple transitions",
+    "Basic subtitles (short formats)"
+  ],
+  "dynamic_list": [
+    "Dynamic animations & zooms",
+    "Integrated stock footage",
+    "Effects & SFX",
+    "Creative transitions"
+  ],
+
+  "offers_title": "Offers & Pricing",
+  "podcasts": "Podcasts",
+  "facecams": "Facecams",
+  "micro": "Street interviews",
+  "shorts": "Short-form content",
+
+  "process_title": "Our Process",
+  "process_steps": ["Footage reception", "Editing", "Revisions", "Delivery"],
+  "process_delay": "Standard delivery: 48h (shorts) • 3–5 days (long formats)",
+
+  "faq_title": "FAQ",
+  "faq_dynamic_q": "What is a dynamic edit?",
+  "faq_dynamic_a": "Dynamic editing includes animated intros, effects, overlays (definitions, titles, stock images, SFX) to make content more impactful and engaging.",
+  "faq_subs_q": "Do simple shorts include subtitles?",
+  "faq_subs_a": "Yes, simple shorts include basic auto-synced subtitles.",
+  "faq_shorts_q": "What is a dynamic short?",
+  "faq_shorts_a": "A dynamic short integrates striking animations, polished transitions, SFX, and creative overlays to maximize reach on TikTok, Instagram Reels, or YouTube Shorts.",
+  "faq_mix_q": "Can I mix different formats?",
+  "faq_mix_a": "Yes, we can combine formats (e.g. podcast + short extracts) with adapted pricing.",
+  "faq_delays_q": "What are the delivery times?",
+  "faq_delays_a": "Standard delivery: 48h for shorts, 3–5 days for long formats. Express 24h delivery available as an option.",
+  "faq_corrections_q": "How many revisions are included?",
+  "faq_corrections_a": "Unlimited revisions are included within the project scope to guarantee the final result matches your expectations.",
+
+  "contact_title": "Ready to get started?",
+  "contact_subtitle": "Reach out for a quick quote.",
+  "contact_email": "📧 Email",
+  "contact_whatsapp": "💬 WhatsApp",
+  "contact_insta": "📸 Instagram",
+  "contact_portfolio": "🎨 Portfolio",
+
+  "whatsapp_msg": "Hello, I'm interested in your video editing services. Here are my needs:"
+}
