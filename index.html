@@ -3,81 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Editing Agency — agence de montage vidéo</title>
-  <meta name="description" content="Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides." />
+  <title data-i18n="meta_title">Editing Agency — agence de montage vidéo</title>
+  <meta name="description" data-i18n="meta_desc" content="Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides.">
   <link rel="canonical" href="https://ea-editing-agency.vercel.app/" />
-
-  <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Editing Agency — agence de montage vidéo" />
-  <meta property="og:description" content="Du rush brut à la vidéo qui performe. Podcasts, interviews, formats courts et contenus corporate." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ea-editing-agency.vercel.app/" />
-  <meta property="og:image" content="https://ea-editing-agency.vercel.app/assets/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Editing Agency — agence de montage vidéo" />
-  <meta name="twitter:description" content="Montages sur-mesure pour créateurs, startups et entreprises." />
-  <meta name="twitter:image" content="https://ea-editing-agency.vercel.app/assets/og.jpg" />
-
-  <!-- Favicon (optionnel) -->
-  <link rel="icon" href="/assets/favicon.ico" />
-
-  <!-- Tailwind CDN -->
+  <meta name="theme-color" content="#0b0b0f">
   <script src="https://cdn.tailwindcss.com"></script>
-
   <style>
-    body { box-sizing: border-box; }
-    @keyframes fadeInUp { from{opacity:0;transform:translateY(-30px)} to{opacity:1;transform:translateY(0)} }
-    @keyframes float {0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)}}
-    .animate-fade-in-up{animation:fadeInUp .8s ease-out}
-    .animate-float{animation:float 3s ease-in-out infinite}
+    @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
     .gradient-text{background:linear-gradient(to right,#a855f7,#ec4899,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .card-hover{transition:transform .3s ease,box-shadow .3s ease}
-    .card-hover:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
-    .process-icon{animation:float 4s ease-in-out infinite}
-    .process-icon:nth-child(1){animation-delay:0s}.process-icon:nth-child(2){animation-delay:.5s}
-    .process-icon:nth-child(3){animation-delay:1s}.process-icon:nth-child(4){animation-delay:1.5s}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .animate-float{animation:float 3s ease-in-out infinite}
   </style>
 </head>
 <body class="bg-gradient-to-b from-black via-gray-950 to-black text-white min-h-screen font-sans">
 
+  <!-- Switch langue -->
+  <div class="fixed top-4 right-4 z-[200]">
+    <button id="lang-toggle"
+      class="flex items-center gap-2 bg-white/10 hover:bg-white/15 border border-white/20 text-white text-sm px-3 py-1.5 rounded-lg backdrop-blur">
+      <span id="flag" aria-hidden="true">🇬🇧</span>
+      <span id="lang-label">EN</span>
+    </button>
+  </div>
+
   <!-- HERO -->
-  <section class="relative flex flex-col items-center justify-center py-28 text-center overflow-hidden">
-    <div class="animate-fade-in-up">
-      <h1 class="text-6xl md:text-7xl font-extrabold gradient-text drop-shadow-2xl animate-float">Editing Agency</h1>
-      <p class="mt-6 text-2xl text-gray-200 max-w-3xl mx-auto font-semibold">
-        Créateurs & entreprises : on sublime vos idées
-      </p>
-      <p class="mt-3 text-lg text-gray-400 max-w-4xl mx-auto">
-        Podcasts, interviews, formats courts et contenus corporate. Du rush brut à la vidéo qui performe.
-      </p>
-    </div>
-    <!-- Particules décoratives -->
-    <div class="absolute top-20 left-20 w-3 h-3 bg-purple-500 rounded-full animate-pulse"></div>
-    <div class="absolute bottom-20 right-20 w-5 h-5 bg-pink-500 rounded-full animate-bounce"></div>
-    <div class="absolute top-40 right-40 w-2.5 h-2.5 bg-blue-400 rounded-full animate-ping"></div>
+  <section class="relative flex flex-col items-center justify-center py-24 text-center">
+    <h1 class="text-6xl md:text-7xl font-extrabold gradient-text animate-float" data-i18n="hero_h1">Editing Agency</h1>
+    <p class="mt-6 text-2xl text-gray-200 max-w-3xl mx-auto font-semibold" data-i18n="hero_h2">
+      Créateurs & entreprises : on sublime vos idées
+    </p>
+    <p class="mt-3 text-lg text-gray-400 max-w-4xl mx-auto" data-i18n="hero_h3">
+      Podcasts, interviews, formats courts ou contenus corporate : tous vos projets transformés en vidéos percutantes.
+    </p>
   </section>
 
   <!-- TYPES -->
   <section class="px-6 md:px-10 py-12 md:py-16 max-w-5xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-cyan-300 mb-8">Types de montage</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-cyan-300 mb-8" data-i18n="types_title">Types de montage</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl card-hover">
-        <h3 class="text-2xl font-semibold text-purple-400 mb-4"><span class="mr-2">✂️</span>Montage simple</h3>
-        <ul class="text-gray-300 space-y-2">
-          <li>✔️ Dérush & nettoyage</li>
-          <li>✔️ Zooms & cuts de base</li>
-          <li>✔️ Musique de fond</li>
-          <li>✔️ Transitions simples</li>
-          <li>✔️ Sous-titres basiques pour formats courts</li>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-semibold text-purple-400 mb-4" data-i18n="simple_title">Montage simple</h3>
+        <ul class="text-gray-300 space-y-2" data-i18n-list="simple_list">
+          <!-- Rempli par i18n -->
         </ul>
       </div>
-      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl card-hover">
-        <h3 class="text-2xl font-semibold text-pink-400 mb-4"><span class="mr-2">⚡</span>Montage dynamique *</h3>
-        <ul class="text-gray-300 space-y-2">
-          <li>⚡ Animations & zooms dynamiques</li>
-          <li>⚡ Images de stock</li>
-          <li>⚡ Effets & SFX</li>
-          <li>⚡ Transitions créatives</li>
+      <div class="bg-gray-900 p-6 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-semibold text-pink-400 mb-4" data-i18n="dynamic_title">Montage dynamique *</h3>
+        <ul class="text-gray-300 space-y-2" data-i18n-list="dynamic_list">
+          <!-- Rempli par i18n -->
         </ul>
       </div>
     </div>
@@ -85,20 +58,20 @@
 
   <!-- OFFRES & TARIFS -->
   <section class="px-6 py-16 max-w-6xl mx-auto">
-    <h2 class="text-4xl md:text-5xl font-bold text-cyan-300 text-center mb-12">Offres & Tarifs</h2>
+    <h2 class="text-4xl md:text-5xl font-bold text-cyan-300 text-center mb-12" data-i18n="offers_title">Offres & Tarifs</h2>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
       <!-- Podcasts -->
       <div>
-        <h3 class="text-2xl font-bold text-purple-400 mb-3">Podcasts</h3>
-        <div class="bg-gray-900 rounded-2xl shadow" style="box-shadow:0 0 15px rgba(168,85,247,.18)">
+        <h3 class="text-2xl font-bold text-purple-400 mb-3" data-i18n="podcasts">Podcasts</h3>
+        <div class="bg-gray-900 rounded-2xl shadow">
           <div class="overflow-x-auto">
             <table class="w-full table-fixed text-gray-200">
               <thead class="bg-gray-800/70">
                 <tr>
-                  <th class="py-3 px-4 text-left w-1/3">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3">Dynamique *</th>
+                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-800">
@@ -115,15 +88,15 @@
 
       <!-- Facecams -->
       <div>
-        <h3 class="text-2xl font-bold text-blue-400 mb-3">Facecams</h3>
-        <div class="bg-gray-900 rounded-2xl shadow" style="box-shadow:0 0 15px rgba(96,165,250,.18)">
+        <h3 class="text-2xl font-bold text-blue-400 mb-3" data-i18n="facecams">Facecams</h3>
+        <div class="bg-gray-900 rounded-2xl shadow">
           <div class="overflow-x-auto">
             <table class="w-full table-fixed text-gray-200">
               <thead class="bg-gray-800/70">
                 <tr>
-                  <th class="py-3 px-4 text-left w-1/3">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3">Dynamique *</th>
+                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-800">
@@ -140,15 +113,15 @@
 
       <!-- Micro-trottoirs -->
       <div>
-        <h3 class="text-2xl font-bold text-yellow-300 mb-3">Micro-trottoirs</h3>
-        <div class="bg-gray-900 rounded-2xl shadow" style="box-shadow:0 0 15px rgba(250,204,21,.18)">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-3" data-i18n="micro">Micro-trottoirs</h3>
+        <div class="bg-gray-900 rounded-2xl shadow">
           <div class="overflow-x-auto">
             <table class="w-full table-fixed text-gray-200">
               <thead class="bg-gray-800/70">
                 <tr>
-                  <th class="py-3 px-4 text-left w-1/3">Durée</th>
-                  <th class="py-3 px-4 text-center w-1/3">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3">Dynamique *</th>
+                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_duration">Durée</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-800">
@@ -164,70 +137,73 @@
 
       <!-- Shorts -->
       <div>
-        <h3 class="text-2xl font-bold text-green-400 mb-3">Shorts</h3>
-        <div class="bg-gray-900 rounded-2xl shadow" style="box-shadow:0 0 15px rgba(74,222,128,.18)">
+        <h3 class="text-2xl font-bold text-green-400 mb-3" data-i18n="shorts">Formats courts</h3>
+        <div class="bg-gray-900 rounded-2xl shadow">
           <div class="overflow-x-auto">
             <table class="w-full table-fixed text-gray-200">
               <thead class="bg-gray-800/70">
                 <tr>
-                  <th class="py-3 px-4 text-left w-1/3">Format</th>
-                  <th class="py-3 px-4 text-center w-1/3">Simple</th>
-                  <th class="py-3 px-4 text-center w-1/3">Dynamique *</th>
+                  <th class="py-3 px-4 text-left w-1/3" data-i18n="col_format">Format</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_simple">Simple</th>
+                  <th class="py-3 px-4 text-center w-1/3" data-i18n="col_dynamic">Dynamique *</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-800">
-                <tr><td class="py-3 px-4">Unitaire (&lt;60 s)</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">20 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">40 €</td></tr>
-                <tr><td class="py-3 px-4">Pack 5</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">90 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">180 €</td></tr>
-                <tr><td class="py-3 px-4">Pack 10</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">170 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">340 €</td></tr>
-                <tr><td class="py-3 px-4">Pack 15</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">240 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">500 €</td></tr>
+                <tr><td class="py-3 px-4" data-i18n="short_unit">Unitaire (&lt;60 s)</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">20 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">40 €</td></tr>
+                <tr><td class="py-3 px-4" data-i18n="short_pack5">Pack 5</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">90 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">180 €</td></tr>
+                <tr><td class="py-3 px-4" data-i18n="short_pack10">Pack 10</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">170 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">340 €</td></tr>
+                <tr><td class="py-3 px-4" data-i18n="short_pack15">Pack 15</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">240 €</td><td class="py-3 px-4 text-center text-purple-200 font-semibold">500 €</td></tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
   <!-- PROCESS -->
   <section class="px-6 py-16 max-w-5xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-cyan-300 mb-10">Notre Processus</h2>
+    <h2 class="text-4xl font-bold text-cyan-300 mb-10" data-i18n="process_title">Notre Processus</h2>
     <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-10">
-      <div class="flex flex-col items-center process-icon"><span class="text-purple-400 text-5xl">🎥</span><p class="mt-3 text-lg text-gray-300 font-medium">Réception</p></div>
+      <div class="flex flex-col items-center"><span class="text-purple-400 text-5xl">🎥</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.0">Réception</p></div>
       <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center process-icon"><span class="text-pink-400 text-5xl">✂️</span><p class="mt-3 text-lg text-gray-300 font-medium">Montage</p></div>
+      <div class="flex flex-col items-center"><span class="text-pink-400 text-5xl">✂️</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.1">Montage</p></div>
       <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center process-icon"><span class="text-blue-400 text-5xl">⏱️</span><p class="mt-3 text-lg text-gray-300 font-medium">Corrections</p></div>
+      <div class="flex flex-col items-center"><span class="text-blue-400 text-5xl">⏱️</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.2">Corrections</p></div>
       <div class="hidden md:block text-gray-600">➜</div>
-      <div class="flex flex-col items-center process-icon"><span class="text-green-400 text-5xl">📦</span><p class="mt-3 text-lg text-gray-300 font-medium">Livraison</p></div>
+      <div class="flex flex-col items-center"><span class="text-green-400 text-5xl">📦</span><p class="mt-3 text-lg text-gray-300 font-medium" data-i18n="process_steps.3">Livraison</p></div>
     </div>
-    <p class="mt-6 text-sm text-gray-500">Délais : 48h (formats courts) • 3–5 jours (formats longs)</p>
+    <p class="mt-6 text-sm text-gray-500" data-i18n="process_delay">Délais : 48h (formats courts) • 3–5 jours (formats longs)</p>
   </section>
 
   <!-- FAQ -->
   <section class="px-6 py-16 max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold text-cyan-300 mb-8">FAQ</h2>
+    <h2 class="text-4xl font-bold text-cyan-300 mb-8" data-i18n="faq_title">FAQ</h2>
     <div class="space-y-6 text-gray-300 text-lg">
-      <div><p class="font-semibold text-white mb-1">Qu’est-ce que le montage dynamique ?</p><p class="text-gray-400">Intro animée, effets, incrustations (définitions, titres, images de stock, SFX) pour un rendu plus percutant.</p></div>
-      <div><p class="font-semibold text-white mb-1">Les formats courts simples comprennent-ils les sous-titres ?</p><p class="text-gray-400">Oui, sous-titres basiques inclus.</p></div>
-      <div><p class="font-semibold text-white mb-1">Qu’est-ce qu’un format court dynamique ?</p><p class="text-gray-400">Animations, transitions travaillées, SFX et incrustations créatives pour TikTok, Reels et Shorts.</p></div>
-      <div><p class="font-semibold text-white mb-1">Corrections ?</p><p class="text-gray-400">Corrections illimitées jusqu’à validation.</p></div>
-      <div><p class="font-semibold text-white mb-1">Délais ?</p><p class="text-gray-400">48h pour formats courts, 3–5 jours pour formats longs.</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_dynamic_q">Qu’est-ce que le montage dynamique ?</p><p class="text-gray-400" data-i18n="faq_dynamic_a">…</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_subs_q">Les formats courts simples comprennent-ils les sous-titres ?</p><p class="text-gray-400" data-i18n="faq_subs_a">…</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_shorts_q">Qu’est-ce qu’un format court dynamique ?</p><p class="text-gray-400" data-i18n="faq_shorts_a">…</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_mix_q">Puis-je mixer plusieurs formats ?</p><p class="text-gray-400" data-i18n="faq_mix_a">…</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_delays_q">Quels sont les délais ?</p><p class="text-gray-400" data-i18n="faq_delays_a">…</p></div>
+      <div><p class="font-semibold text-white mb-1" data-i18n="faq_corrections_q">Combien de corrections sont incluses ?</p><p class="text-gray-400" data-i18n="faq_corrections_a">…</p></div>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section class="px-6 py-16 max-w-4xl mx-auto text-center">
-    <h2 class="text-4xl font-bold text-cyan-300 mb-6">Prêt à commencer ?</h2>
-    <p class="text-lg text-gray-300 mb-8">Contactez-nous pour un devis rapide.</p>
+    <h2 class="text-4xl font-bold text-cyan-300 mb-6" data-i18n="contact_title">Prêt à commencer ?</h2>
+    <p class="text-lg text-gray-300 mb-8" data-i18n="contact_subtitle">Contactez-nous pour un devis rapide.</p>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      <a aria-label="Email" href="mailto:lacapsulebusinesspro@gmail.com" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center">📧 Email</a>
-      <a aria-label="WhatsApp" href="https://wa.me/33761579576" target="_blank" rel="noopener" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center">💬 WhatsApp</a>
-      <a aria-label="Instagram" href="https://www.instagram.com/ea_editingagency/" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center">📸 Instagram</a>
-      <a aria-label="Portfolio" href="https://bento.me/editing-agency" target="_blank" rel="noopener" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center">🎨 Portfolio</a>
+      <a aria-label="Email" href="mailto:lacapsulebusinesspro@gmail.com" class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_email">📧 Email</a>
+      <a aria-label="WhatsApp" href="https://wa.me/33761579576" target="_blank" rel="noopener" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_whatsapp">💬 WhatsApp</a>
+      <a aria-label="Instagram" href="https://www.instagram.com/ea_editingagency/" target="_blank" rel="noopener" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_insta">📸 Instagram</a>
+      <a aria-label="Portfolio" href="https://bento.me/editing-agency" target="_blank" rel="noopener" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold py-4 px-6 rounded-full transition-all text-center" data-i18n="contact_portfolio">🎨 Portfolio</a>
     </div>
+  </section>
 
-  <!-- CTA WhatsApp flottant mobile -->
-  <a href="https://wa.me/33761579576?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20montage%20vid%C3%A9o.%20Voici%20mon%20besoin%20%3A"
+  <!-- CTA WhatsApp mobile -->
+  <a href="https://wa.me/33761579576"
      target="_blank" rel="noopener noreferrer"
      class="fixed bottom-6 right-6 md:hidden w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg z-[100]"
      aria-label="WhatsApp">
@@ -236,23 +212,69 @@
     </svg>
   </a>
 
-  <!-- CTA flottant desktop -->
-  <a href="https://wa.me/33761579576?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services%20de%20montage%20vid%C3%A9o.%20Voici%20mon%20besoin%20%3A"
-     target="_blank" rel="noopener noreferrer"
-     class="hidden md:flex fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-5 rounded-full shadow-lg items-center gap-2 z-[100]">
-    💬 WhatsApp
-  </a>
-
-  </section>
-
   <footer class="text-center py-8 text-gray-500 border-t border-gray-800">
     <p>&copy; 2024 Editing Agency. Tous droits réservés.</p>
   </footer>
 
-  <!-- JS mineur -->
+  <!-- i18n script -->
   <script>
-    const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}})},{threshold:.1,rootMargin:'0px 0px -50px 0px'});
-    document.querySelectorAll('.card-hover').forEach(el=>{el.style.opacity='0';el.style.transform='translateY(30px)';el.style.transition='opacity .6s ease, transform .6s ease';observer.observe(el);});
+  const I18N_KEYS_DEFAULTS = {
+    col_duration:"Durée", col_simple:"Simple", col_dynamic:"Dynamique *", col_format:"Format",
+    short_unit:"Unitaire (<60 s)", short_pack5:"Pack 5", short_pack10:"Pack 10", short_pack15:"Pack 15",
+    meta_title:"Editing Agency — agence de montage vidéo",
+    meta_desc:"Montage vidéo premium pour créateurs et entreprises : podcasts, facecams, micro-trottoirs, formats courts. Corrections illimitées, délais rapides."
+  };
+
+  async function loadLang(lang){
+    document.documentElement.lang = lang;
+    const res = await fetch(`/locales/${lang}.json`);
+    const dict = await res.json();
+
+    // Textes simples
+    document.querySelectorAll("[data-i18n]").forEach(el=>{
+      const key = el.getAttribute("data-i18n");
+      const val = (key.split('.').reduce((a,k)=>a?.[k], dict)) ?? I18N_KEYS_DEFAULTS[key];
+      if(val!=null) el.textContent = val;
+    });
+
+    // Listes (ul) à partir d'un tableau
+    document.querySelectorAll("[data-i18n-list]").forEach(ul=>{
+      const key = ul.getAttribute("data-i18n-list");
+      const arr = dict[key];
+      if(Array.isArray(arr)){
+        ul.innerHTML = "";
+        arr.forEach(item=>{
+          const li = document.createElement("li");
+          li.textContent = (typeof item==="string") ? item : String(item);
+          ul.appendChild(li);
+        });
+      }
+    });
+
+    // WhatsApp message
+    const msg = dict.whatsapp_msg || "Bonjour, je suis intéressé par vos services de montage vidéo. Voici mon besoin :";
+    document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a=>{
+      a.href = a.href.split("?")[0] + "?text=" + encodeURIComponent(msg);
+    });
+
+    // Titre et meta description si fournis
+    const t = dict.meta_title || I18N_KEYS_DEFAULTS.meta_title;
+    const d = dict.meta_desc  || I18N_KEYS_DEFAULTS.meta_desc;
+    document.title = t;
+    const md = document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute("content", d);
+
+    // Bouton flag/label
+    document.getElementById("flag").textContent = lang==="fr" ? "🇬🇧" : "🇫🇷";
+    document.getElementById("lang-label").textContent = lang==="fr" ? "EN" : "FR";
+    localStorage.setItem("lang", lang);
+  }
+
+  document.getElementById("lang-toggle").addEventListener("click", ()=>{
+    loadLang(document.documentElement.lang==="fr" ? "en" : "fr");
+  });
+
+  loadLang(localStorage.getItem("lang") || "fr");
   </script>
 </body>
 </html>
